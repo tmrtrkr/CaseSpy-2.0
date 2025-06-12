@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flask API Client"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Model Seçimi:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/black" />
+
+        <Spinner
+            android:id="@+id/modelSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:padding="12dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnTriggerSendToApi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trigger SendToApi"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnTakeShot1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Take Screenshot 1"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnTakeShot2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Take Screenshot 2"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnClearResponse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear Response"
+            android:backgroundTint="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="API Response:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/black" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/response_background"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/responseText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:fontFamily="monospace"
+            android:lineSpacingExtra="2dp"
+            android:scrollbars="vertical"
+            android:text="Flask API yanıtları burada görünecek..." />
+
+    </ScrollView>
+
+</LinearLayout> 
