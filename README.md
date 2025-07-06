@@ -3,9 +3,9 @@ It consist of PC server service which is CaseSpy and an Android Client to send r
 3rd party apps.
 
 Installation:
-1) Clone the repo
-2) Clone the mobile App client Repo
-3) Install the android app to your phone
+1) let's start
+2) Clone the repo
+3) Upload the AndroidClient file to your phone and install the apk
 4) Install the dependencies: openai,flask,flask_cors,pathlib,PIL,customtkinter,tkinter,pytesseract,numpy
 5) Be sure the firewall is off
 6) Add tcp/Ip inbound rule for any ip for port 5000
