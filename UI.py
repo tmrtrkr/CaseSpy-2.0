@@ -9,6 +9,7 @@ from PIL import Image, ImageTk, ImageDraw
 import mss
 from screeninfo import get_monitors
 import numpy as np
+import os
 
 
 class CustomGUI(tk.Tk):
@@ -138,6 +139,16 @@ class CustomGUI(tk.Tk):
         self.add_log("Second screenshot taken successfully")
 
     def sendToApi(self, model_choice=None):
+        # En az bir ekran görüntüsü var mı kontrolü
+        if not (os.path.exists('Screen_Shots/shot1.png') or os.path.exists('Screen_Shots/shot2.png')):
+            self.result_text_box.config(state='normal')
+            self.result_text_box.delete(1.0, tk.END)
+            self.result_text_box.insert(tk.END, "No screenshot found (neither shot1.png nor shot2.png exists)")
+            self.result_text_box.config(state='disabled')
+            self.last_response = "No screenshot found (neither shot1.png nor shot2.png exists)"
+            self.add_log("Error: No screenshot found (neither shot1.png nor shot2.png exists)")
+            return "No screenshot found (neither shot1.png nor shot2.png exists)"
+
         self.result_text_box.config(state='normal')
         self.result_text_box.delete(1.0, tk.END)
         self.result_text_box.insert(tk.END, "Loading...")

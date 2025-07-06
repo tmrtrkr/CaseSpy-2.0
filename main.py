@@ -48,6 +48,7 @@ def trigger_sendToApi():
 
 @app.route('/trigger-sendToApi-android-post', methods=['POST'])
 def trigger_sendToApi_android_post():
+    logging.info(f"Android POST raw data: {request.get_data(as_text=True)}")
     if not request.is_json:
         return jsonify({"error": "Content-Type must be application/json"}), 415
         
